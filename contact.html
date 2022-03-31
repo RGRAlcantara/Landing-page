@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Landing Page</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <section>
+            <!-- For Nav -->
+            <header>
+                <a href="#"><img src="img/logoWhite.png" class="logo"></a>
+                <ul class="topNav">
+                    <li class="topList"><a href="/index.html">Home</a></li>
+                    <li class="topList"><a href="/index.html">About Me</a></li>
+                    <li class="topList"><a href="/index.html">Blog</a></li>
+                    <li class="topList"><a href="#">Contact</a></li>
+                </ul>
+            </header>
+           
+                <div class="containerForm">
+                        <div class="contact-form">
+                            <div id="error_message"></div>
+                            <form id="myform"  onsubmit="return validation()">
+                                <h2 class="contactTitle"><b>Contact us</b></h2>
+
+                                <div class="input-container">
+                                    <input type="text" placeholder="Name" class="input" id="name">
+                                </div>
+                                <div class="input-container">
+                                    <input type="email" placeholder="Email Address" class="input" id="email">
+                                    
+                                </div>
+                                <div class="input-container">
+                                    <input type="tel" placeholder="Phone" class="input" id="phone">
+                                    
+                                </div>
+                                <div class="input-container textarea">
+                                    <textarea placeholder="Message" class="input" id="message"></textarea>
+                    
+                                </div>
+                                <input type="submit" class="btn">
+                            </form>
+                        </div>
+                    
+                </div>
+           
+            </section>
+            
+            </body>
+</html>
