@@ -4,7 +4,13 @@
         <meta charset="UTF-8">
         <title>Landing Page</title>
         <link rel="stylesheet" href="style.css">
-        <script defer src="blog.js"></script>
+       <script>
+          $document.ready(function(){
+            $('#myImg').click(function(){
+              $('#myModal').modal('show')
+            });
+          });
+        </script>
     </head>
     <body>
         <section>
@@ -19,6 +25,8 @@
                 </ul>
             </header>
             <div class="content">
+
+
                 <!-- For Home -->
                 <div class="textBox" id="home">
                     <h2>Welcome!<br>
@@ -29,6 +37,7 @@
                         quidem quae ab, nulla eos vel aperiam.</p>
                     <a href="#">Learn More</a>
                 </div>
+
                 <!--For About-->
                 <div class="about" id="aboutMe">
                     <div class="boxAbout">
@@ -43,42 +52,59 @@
                     </div>
                     </div>
                 </div>
+
                 <!--Blog Title and Modals-->
                 <div class="blogContainer" id="travelBlogs">
+
                     <h2>Travel Blog</h2>
                     <div class="blogThumb">
                         <!--Thumbnails for blog-->
                         <div class="blogformat">
-                          <img src="/img/thumb1.jpg" class="blogPhoto">
-                          <button data-modal-target="#modal">Open</button>
+                          <img class="blogPhoto" id="myImg" src="/img/thumb1.jpg"  alt="Italy">
                         </div>
                         <div class="blogformat">
-                          <img src="/img/thumb2.jpg" class="blogPhoto">
-                          <button data-modal-target="#modal">Open</button>
+                          <img class="blogPhoto" id="myImg" src="/img/thumb2.jpg"  alt="Venice">
                         </div>
                         <div class="blogformat">
-                          <img src="/img/thumb3.jpg" class="blogPhoto">
-                          <button data-modal-target="#modal">Open</button>
+                          <img class="blogPhoto" id="myImg" src="/img/thumb3.jpg"  alt="Philippines">
                         </div>
-                        <!--Modal cell-->
-                        <div class="modal" id="modal">
-                          <div class="pop-upHeader">
-                            <div class="blogTitle">Example Blog</div>
-                            <button data-close-button class="close-btn">&times;</button>
-                          </div>
-                          <div class="pop-upBody">
-                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor vero quasi enim, a asperiores
-                              tempore et ea eos quia veniam assumenda, ad nulla perspiciatis similique quisquam officia. Placeat perferendis illum quo doloribus, 
-                              quia similique asperiores? Quo culpa temporibus eaque vero animi doloribus nostrum pariatur aliquam dolorum. Rerum, ut vitae neque 
-                              magni alias et incidunt vel harum consequatur itaque quis possimus eius culpa molestias quas officia tenetur laborum recusandae 
-                              reiciendis! Sed minus quam eius hic eveniet labore error cupiditate odio iusto?
-                          </div>
+
+                        <!-- The Modal-->
+                        <div id="myModal" class="modal">
+                          <span class="close">&times;</span>
+                          <img class="modal-content" id="img01">
+                          <div id="caption"></div>
                         </div>
+                        <script>
+                          // Get the modal
+                          var modal = document.getElementById("myModal");
+                          
+                          // Get the image and insert it inside the modal - use its "alt" text as a caption
+                          var img = document.getElementById("myImg");
+                          var modalImg = document.getElementById("img01");
+                          var captionText = document.getElementById("caption");
+                          img.onclick = function(){
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                          }
+                          
+                          // Get the <span> element that closes the modal
+                          var span = document.getElementsByClassName("close")[0];
+                          
+                          // When the user clicks on <span> (x), close the modal
+                          span.onclick = function() { 
+                            modal.style.display = "none";
+                          }
+                          </script>
+                          
+                     </div>
+
                   </div>
-                </div>
-                <div id="overlay"></div>
-            </div>
-            
+
+
+            </div>  
+           
         </section>
     </body>
 </html>
